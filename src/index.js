@@ -1,13 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+// Import de react router pour...
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./assets/style/normalize.css";
+import "./index.scss";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import Apartment from "./pages/Apartment/Apartment";
+import About from "./pages/About/About";
+import NoMatch from "./pages/NoMatch/NoMatch";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// On greffe React à notre DOM grace à la div "root"
+const root = ReactDOM.createRoot(document.getElementById("root"));
+// Grâce à la méthode "render" on affiche les composants
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Header />
+      {/* Importation des routes */}
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="apartment/:productId" element={<Apartment />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
