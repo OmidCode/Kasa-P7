@@ -12,9 +12,8 @@ import About from "./pages/About/About";
 import NoMatch from "./pages/NoMatch/NoMatch";
 import reportWebVitals from "./reportWebVitals";
 
-// On greffe React à notre DOM grace à la div "root"
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// Grâce à la méthode "render" on affiche les composants
+//La méthode "render" affiche les composants
 root.render(
   <React.StrictMode>
     <BrowserRouter>
