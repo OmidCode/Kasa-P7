@@ -32,7 +32,6 @@ function Slider({ props }) {
     <div className="slider">
       {props.map((picture, index) => {
         return (
-          /* Pour chaque photo du tableau "pictures" on renvoit une div */
           <div
             key={index}
             // Si l'index de la photo est strictement égale à "current" on applique la classe "active" sinon la classe "inactive"
@@ -59,7 +58,7 @@ function Slider({ props }) {
             <img src={arrowRight} alt="" className="slider__next-icon" />
           </div>
           <div className={current.length <= 1 ? "compteur__clear" : "compteur"}>
-            {current + 1}/{updateCurrent.length}
+            {current + 1}/{length}
           </div>
         </>
       ) : null}
