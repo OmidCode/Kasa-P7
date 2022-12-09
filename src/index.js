@@ -13,7 +13,7 @@ import NoMatch from "./pages/NoMatch/NoMatch";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//La méthode "render" affiche les composants
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>

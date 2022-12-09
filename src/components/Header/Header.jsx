@@ -1,4 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 import Logo from "../Logo/Logo";
@@ -9,18 +10,25 @@ function Header() {
       <Link className="header__logo" to="/">
         <Logo fill="#FF6060" className="logo" />
       </Link>
-      <nav className="header__nav">
-        <Link className="nav-link" to="/">
-          Accueil
-        </Link>
 
-        <Link className="nav-link" to="about">
-          A propos
-        </Link>
+      <nav>
+        <ul className="nav-links">
+          <NavLink
+            to="/"
+            end
+            className={(link) => (link.isActive ? "nav-links--active" : null)}
+          >
+            <li>Accueil</li>
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={(link) => (link.isActive ? "nav-links--active" : null)}
+          >
+            <li>A Propos</li>
+          </NavLink>
+        </ul>
       </nav>
-      {/* Un <Outlet> permet de rendre n'importe quelle route enfant actuellement active.
-      C'est comme un espace réservé pour les routes enfants définies ci-dessus. */}
-      <Outlet />
     </header>
   );
 }
