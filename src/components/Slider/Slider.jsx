@@ -49,8 +49,7 @@ function Slider({ props }) {
           </div>
         );
       })}
-      {/* affichage du bouton s'il y a plus d'une photo.
-      La src ce sont les svg et au clique on appele les variables d'expression qui mettent à jour le state */}
+
       {length > 1 ? (
         <>
           <div className="slider__previous" onClick={prevSlide}>
@@ -58,6 +57,9 @@ function Slider({ props }) {
           </div>
           <div className="slider__next" onClick={nextSlide}>
             <img src={arrowRight} alt="" className="slider__next-icon" />
+          </div>
+          <div className={current.length <= 1 ? "compteur__clear" : "compteur"}>
+            {current + 1}/{updateCurrent.length}
           </div>
         </>
       ) : null}
